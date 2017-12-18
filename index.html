@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>seo protocol</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+</head>
+
+<body class="tm-bg-img-content">
+
+    <div class="tm-bg-img-header">
+        <div class="container-fluid">
+
+            <div id="top" class="tm-header-container">
+
+                <!-- 1. Site Header -->
+                <div class="row tm-site-header">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
+
+                        <h1 class="tm-site-title">Seo Protocol</h1>
+                        <p class="tm-site-description">This is an experiment</p>
+
+                    </div>
+                </div>
+
+            </div> <!-- .tm-header-container -->
+
+            <!-- 3. About -->
+            <div class="row" id="tm-section-1">
+
+                <div class="container">
+                    <section class="tm-2-col-img-text">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 tm-2-col-img">
+                            <i class="fa fa-5x fa-map-o"></i>
+                            <i class="fa fa-5x fa-rocket"></i>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 tm-2-col-text">
+                            <h2 class="tm-2-col-text-title">Titre du site</h2>
+                            <p class="tm-2-col-text-description">
+                              <a href="lien.com" rel="nofollow" >Lien</a>
+                            </p>
+                        </div>
+
+                    </section>
+                </div>
+
+            </div> <!-- About section, tm-section-1 & 2 -->
+
+        </div> <!-- container-fluid -->
+    </div> <!-- tm-bg-img-header -->
+
+    <!-- load JS files -->
+    <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+
+    <script>
+
+        function prepareMenuForDesktop() {
+
+            var navbarHeight = 0;
+
+            // For screens greater than 767
+            if($(window).width() > 767) {
+
+                // target at which the menu bar changes to sticky
+                var target = $("#tm-section-1").offset().top - 100;
+
+                // window scroll
+                $(window).scroll(function(){
+
+                    if($(this).scrollTop() > target) {
+                        $(".tm-navbar-row").addClass("sticky");
+                    }
+                    else {
+                        $(".tm-navbar-row").removeClass("sticky");
+                    }
+
+                });
+
+                navbarHeight = 56;
+            }
+
+            // Single Page Nav
+            $('#tmNavbar').singlePageNav({
+               'currentClass' : "active",
+                offset : navbarHeight,
+                'filter': ':not(.external)'
+            });
+        }
+
+        $(document).ready(function(){
+
+            prepareMenuForDesktop();
+
+            // On window resize, prepare menu
+            $(window).resize(function(){
+                prepareMenuForDesktop();
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>
